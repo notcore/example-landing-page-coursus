@@ -1,0 +1,19 @@
+{
+  "name": "pt1---copy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+  "build": "postcss src/style.css -o dist/output.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.2",
+    "fs": "^0.0.1-security",
+    "postcss-class-rename": "^1.0.1",
+    "tailwindcss": "^4.1.2"
+  },
+  "keywords": [],
+  "description": ""
+}

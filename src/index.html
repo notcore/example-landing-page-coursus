@@ -1,0 +1,430 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/iconHuman.Let.webp" type="image/x-icon">
+    <title>hyuman.let</title>
+    <link href="./output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        body ::-webkit-scrollbar{
+            display: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .ubah-text {
+            display: inline-block;
+            animation: randomText 1s infinite;
+        }
+
+        @keyframes randomText {
+            0% { content: '0'; }
+            25% { content: '1'; }
+            50% { content: '2'; }
+            75% { content: '3'; }
+            100% { content: '4'; }
+        }
+
+        .modal-fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Warna latar belakang semi-transparan */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 50;
+        }
+
+        .modal-content {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            color: gray;
+        }
+
+        .modal-close:hover {
+            color: black;
+        }
+
+        .scroll-animate {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .scroll-animate.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+    </style>
+</head>
+<body class="bg-white">
+    <header class="bg-white sticky z-50 top-0 py-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="text-xl font-bold">hyuman.let</div>
+            <div class="flex gap-4 ml-auto mr-4">
+                <button onclick="openModal()" class="hover:text-indigo-600" href="/login">login</button>
+                <button onclick="openModal()" class="hover:text-indigo-600" href="/register">register</button>
+            </div>
+            <button onclick="openModal()" class="border border-gray-300 px-4 py-2 rounded-full text-gray-600 bg-white hover:text-gray-900">join us</button>
+        </div>
+    </header>
+    <main class="mx-auto max-w-full">
+        <div class="flex flex-col lg:flex-row items-center">
+            <div class="lg:w-1/2 relative px-10 lg:-mt-10 mt-12 space-y-6">
+                <h1 class="text-4xl lg:text-5xl font-bold">Adaptasi dengan <span class="text-indigo-600"> AI </span> &amp; nikmati perkembangan <span class="text-indigo-600">teknologi</span></h1>
+                <p class="text-gray-600">courses online untuk berkembang bersama AI di era teknologi modern</p>
+                <div class="space-x-4 flex gap-1">
+                    <button onclick="openModal()" class="bg-indigo-600 hover:bg-indigo-700 transition text-white px-6 py-3 rounded-full">get started</button> 
+                    <a href="#produk">
+                        <button class="border border-gray-300 px-6 py-3 rounded-full bg-white text-gray-600">paket coursus</button>                    
+                    </a>
+                </div>
+                <div class="flex ml-4 space-x-8 pt-8">
+                    <div class="text-center">
+                        <div class="font-bold text-2xl">7 days</div>
+                        <div class="text-gray-600">coursus</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="font-bold text-2xl">free</div>
+                        <div class="text-gray-600">register</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="font-bold text-2xl">1.2k</div>
+                        <div class="text-gray-600">user</div>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:w-1/2 bg-black flex justify-center lg:justify-end">
+                <div class="hidden lg:flex relative">
+                    <div class="absolute lg:hidden z-20 bg-gradient-to-b from-white via-white to-transparent h-[150px] w-full"></div>
+                    <img src="./img/ilus.jpg" class="w-[100%] h-auto object-cover" alt="">
+                    <div class="absolute lg:hidden z-20 bottom-0 bg-gradient-to-t from-white via-white to-transparent h-[150px] w-full"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="text-center lg:block w-[50%] ml-auto hidden bg-gradient-to-t h-[200px] from-white via-white/70 -mt-[200px] z-40 relative to-transparent py-12"></div>
+
+    <div id="about" class="mx-automd:-mt-16 scroll-animate py-16 relative">
+        <div class="text-center pt-16">
+            <h1 class="text-3xl font-bold text-gray-900">Fasilitas coursus</h1>
+            <p class="mt-2 text-gray-600">dapatkan fasilitas dari coursus kami.</p>
+        </div>
+        <div class="bg-white flex md:gap-10 items-center justify-center mt-10">
+            <div class=" mx-auto p-4 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2">
+                    <img alt="Person holding a tablet with colorful sticky notes in the background" class="rounded-lg shadow-md" height="400" src="./img/ChatGPT Image 4 Apr 2025, 08.52.43.png" width="600"/>
+                </div>
+                <div class="md:w-1/2 mt-6 md:mt-0 md:ml-6 text-center md:text-left">
+                    <span class="inline-block bg-gray-50 text-indigo-700 text-sm font-semibold px-3 py-1 rounded-full mb-4">
+                    online coursus
+                    </span>
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                        dapatkan fasilitas akses
+                        <span class="text-indigo-600">
+                            premium AI
+                        </span>
+                        di coursus kami.
+                    </h1>
+                    <p class="text-gray-700 mb-6">
+                    kami juga memberikan fasilitas bagi peserta coursus kami, fasilitas ini berupa akses premium ke AI yang kami gunakan dalam coursus kami. Dengan akses premium ini, Anda akan mendapatkan pengalaman belajar yang lebih baik dan lebih mendalam.
+                    </p>
+                    <button onclick="openModal()" class="inline-block bg-indigo-600 text-white text-lg font-semibold px-6 py-3 rounded-full shadow-md hover:bg-indigo-700 transition duration-300">
+                        join us
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="about" class="mx-auto scroll-animate bg-gray-50 py-16 relative">
+        <div class="text-center">
+            <h1 class="text-3xl font-bold text-gray-900">Gabung sekarang</h1>
+            <p class="mt-2 text-gray-600">bergbung dengan kami untuk beradaptasi</p>
+        </div>
+        <div class="flex md:gap-10 items-center justify-center md:mt-8">
+            <div class=" mx-auto gap-10 p-4 flex flex-col md:flex-row-reverse items-center">
+                <div class="md:w-1/2 relative">
+                    <img class="rounded-lg shadow-md w-full h-[400px] object-cover hidden md:block" src="./img/aaaaa.jpeg"/>
+                </div>
+                <div class="md:w-1/2 mt-6 md:mt-0 md:ml-6 text-center md:text-left">
+                    <span class="inline-block bg-white text-indigo-700 text-sm font-semibold px-3 py-1 rounded-full mb-4">
+                    online coursus
+                </span>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    ikuti coursus selama
+                    <span class="text-indigo-600">
+                    7 hari
+                    </span>
+                    , pendaftaran gratis.
+                </h1>
+                <p class="text-gray-700 mb-6">
+                    Bergabunglah dengan kami untuk mendapatkan akses ke coursus online yang dirancang khusus untuk membantu Anda beradaptasi dengan perkembangan teknologi AI. Dengan pembelajaran yang interaktif dan materi yang relevan, Anda akan siap menghadapi tantangan di era digital ini.
+                </p>
+                <button onclick="openModal()" class="inline-block bg-indigo-600 text-white text-lg font-semibold px-6 py-3 rounded-full shadow-md hover:bg-indigo-700 transition duration-300">
+                    join us
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="max-w-6xl mt-12 mx-auto p-4">
+        <h1 class="text-3xl font-bold mb-2">Kenapa <spam class="text-indigo-600">AI</spam> sangat membantu?</h1>
+        <h1 class="text-xl mb-6 flex items-center text-gray-600"></h1>
+        <div class="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="border-1  hover:text-white group transition duration-500 border-gray-300 p-6 rounded-lg shadow-md hover:bg-indigo-600">
+                <div class="flex gap-4 items-center mb-4">
+                    <i class="fas fa-paint-brush text-2xl"></i>
+                    <h2 class="text-xl mt-3 font-bold mb-2">Desain & Editing</h2>
+                </div>
+                <p class="mb-4">AI dapat membantu dalam proses desain dan editing</p>
+            </div>
+            <div class="border-1  hover:text-white group transition duration-500 border-gray-300 p-6 rounded-lg shadow-md hover:bg-indigo-600">
+                <div class="flex gap-2 items-center mb-4">
+                    <img src="./img/rush.png" class="max-w-[35px]  group-hover:filter group-hover:brightness-0 group-hover:invert" alt="">
+                    <h2 class="text-xl mt-2 font-bold mb-2">fast</h2>
+                </div>
+                <p class="mb-4">membantu pekerjaan jadi lebih cepat</p>
+            </div>
+            <div class="border-1  hover:text-white group transition duration-500 border-gray-300 p-6 rounded-lg shadow-md hover:bg-indigo-600">
+                <div class="flex gap-4 items-center mb-4">
+                    <i class="fas fa-mobile-alt text-2xl"></i>
+                    <h2 class="text-xl mt-2 font-bold mb-2">support all devices</h2>
+                </div>
+                <p class="mb-4">AI bisa di install di semua perangkat</p>
+            </div>
+            <div class="border-1  hover:text-white group transition duration-500 border-gray-300 p-6 rounded-lg shadow-md hover:bg-indigo-600">
+                <div class="flex gap-4 items-center mb-4">
+                    <i class="fas fa-bullhorn text-2xl"></i>
+                    <h2 class="text-xl mt-2 font-bold mb-2">Digital Marketing</h2>
+                </div>
+                <p class="mb-4">membantu untuk merancang strategi bisnis</p>
+            </div>
+            <div class="border-1  hover:text-white group transition duration-500 border-gray-300 p-6 rounded-lg shadow-md hover:bg-indigo-600">
+                <div class="flex gap-4 items-center mb-4">
+                    <i class="fas fa-pen text-2xl"></i>                
+                    <h2 class="text-xl mt-2 font-bold mb-2">penulis cepat</h2>
+                </div>
+                <p class="mb-4">tulis beberapa paragraf dengan cepat</p>
+            </div>
+            <div class="border-1  hover:text-white group transition duration-500 border-gray-300 p-6 rounded-lg shadow-md hover:bg-indigo-600">
+                <div class="flex gap-4 items-center mb-4">
+                    <i class="fas fa-shopping-cart text-2xl"></i>                
+                    <h2 class="text-xl mt-2 font-bold mb-2">Produk baru</h2>
+                </div>
+                <p class="mb-4">AI dapat menciptakan lapangan kerja atau produk baru</p>
+            </div>
+        </div>
+    </div>
+    <div id="produk" class="mx-auto pb-16 relative">
+        <div class="text-center bg-white pt-16">
+            <h1 class="text-3xl font-bold text-gray-900">Paket coursus</h1>
+            <p class="mt-2 text-gray-600">pilihan paket coursus berkembang bersama AI</p>
+        </div>
+        <div class="mt-10 mx-12 rounded-lg flex overflow-x-auto gap-2 lg:grid-cols-3">
+            <div class="mt-12 flex flex-wrap justify-center gap-4">
+                <div class="bg-white border-1  border-slate-300 w-80 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-900">free coursus</h2>
+                    <div class="mt-4">
+                        <span class="text-4xl font-bold text-gray-900">free</span>
+                    </div>
+                    <p class="mt-2 text-gray-600">7 days coursus</p>
+                    <ul class="mt-4 space-y-2">
+                        <li class="flex items-center text-gray-600"><i class="fas fa-check text-indigo-600 mr-2"></i>pengenalan AI</li>
+                        <li class="flex items-center text-gray-600"><i class="fas fa-check text-indigo-600 mr-2"></i>Konsep dasar AI</li>
+                        <li class="flex items-center text-gray-600"><i class="fas fa-check text-indigo-600 mr-2"></i>menggunakan AI untuk membuat document</li>
+                        <li class="flex items-center text-gray-600"><i class="fas fa-check text-indigo-600 mr-2"></i>menggunakan AI untuk mengelola data</li>
+                    </ul>
+                    </div>
+                    <button onclick="openModal()" class="mt-4 w-full py-2 px-4 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-500 focus:outline-none">coursus now</button>
+                </div>
+            </div>
+            <div class="mt-12 flex flex-wrap justify-center gap-4">
+                <div class="bg-indigo-600 text-white w-80 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">  
+                    <div>
+                        <h2 class="text-lg font-semibold">Pengembangan Skill di Era AI</h2>
+                    <div class="mt-4">
+                        <span class="text-4xl flex font-bold">Rp 
+                            <span class="ubah-text ml-2">0</span>
+                            <span class="ubah-text">0</span>
+                            .
+                            <span class="ubah-text">0</span>
+                            <span class="ubah-text">0</span>
+                            <span class="ubah-text">0</span>
+                        </span>
+                    </div>
+                    <p class="mt-2">7 days coursus</p>
+                    <ul class="mt-4 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-white-600 mr-2"></i>Cara memanfaatkan AI di bisnis</li>
+                        <li class="flex items-center"><i class="fas fa-check text-white-600 mr-2"></i>peningkatan produktivitas</li>
+                        <li class="flex items-center"><i class="fas fa-check text-white-600 mr-2"></i>menggunakan AI untuk belajar</li>
+                        <li class="flex items-center"><i class="fas fa-check text-white-600 mr-2"></i>menjadikan AI sebagai asisten</li>
+                        <li class="flex items-center"><i class="fas fa-check text-white-600 mr-2"></i>permudah pekerjaan harian dengan AI</li>
+                    </ul>
+                    </div>
+                    <button onclick="openModal()" class="mt-4 w-full py-2 px-4 bg-white text-indigo-600 hover:bg-white/90 font-semibold rounded-lg  focus:outline-none">coursus now</button>
+                </div>
+            </div>
+            <div class="mt-12 flex flex-wrap justify-center gap-4">
+                <div class="bg-indigo-700 text-white w-80 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
+                    <div>
+                        <h2 class="text-lg font-semibold">Machine Learning</h2>
+                    <div class="mt-4">
+                        <span class="text-4xl flex font-bold">Rp 
+                            <span class="ubah-text ml-2">0</span>
+                            <span class="ubah-text">0</span>
+                            .
+                            <span class="ubah-text">0</span>
+                            <span class="ubah-text">0</span>
+                            <span class="ubah-text">0</span>
+                        </span>
+                    </div>
+                    <p class="mt-2">30 days coursus</p>
+                    <ul class="mt-4 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-white-600 mr-2"></i>Machine Learning</li>
+                        <li class="flex items-center"><i class="fas fa-check text-white-600 mr-2"></i>Deep Learning Specialization</li>
+                        <li class="flex items-center"><i class="fas fa-check text-white-600 mr-2"></i>pembuatan model AI</li>
+                        <li class="flex items-center"><i class="fas fa-check text-white-600 mr-2"></i>Algoritma ML</li>
+                    </ul>
+                    </div>
+                        <button onclick="openModal()" class="mt-4 w-full py-2 px-4 bg-white text-indigo-700 hover:bg-white/90 font-semibold rounded-lg  focus:outline-none">coursus now</button>
+                </div>
+            </div>
+            <div class="mt-12 flex flex-wrap justify-center gap-4">
+                <div class="bg-yellow-500 text-white w-80 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
+                    <div>
+                        <h2 class="text-lg font-semibold">AI untuk Pengembangan Karir</h2>
+                    <div class="mt-4">
+                        <span class="text-4xl flex font-bold">Rp 
+                            <span class="ubah-text ml-2">0</span>
+                            <span class="ubah-text">0</span>
+                            <span class="ubah-text">0</span>
+                            .
+                            <span class="ubah-text">0</span>
+                            <span class="ubah-text">0</span>
+                            <span class="ubah-text">0</span>
+                        </span>
+                    </div>
+                    <ul class="mt-4 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-white-600 mr-2"></i>AI Career Essentials</li>
+                        <li class="flex items-center"><i class="fas fa-check text-white-600 mr-2"></i>Future of Work: Preparing for AI Disruption</li>
+                        <li class="flex items-center"><i class="fas fa-check text-white-600 mr-2"></i>Skill yang dibutuhkan di pasar kerja yang dipengaruhi AI.</li>
+                        <li class="flex items-center"><i class="fas fa-check text-white-600 mr-2"></i>penerapan AI dibidang pendidikan dll</li>
+                    </ul>
+                    </div>
+                    
+                  
+                        <button onclick="openModal()" class="mt-4 w-full py-2 px-4 bg-white text-yellow-600 hover:bg-white/90 font-semibold rounded-lg  focus:outline-none">coursus now</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="modal-fullscreen">
+    <div class="modal-content relative">
+        <img alt="Emoji with sunglasses and sparkles" class="mx-auto mb-4" height="100" src="./img/iconHuman.Let.webp" width="100"/>
+        <button onclick="closeModal()" class="absolute right-5 top-3 text-4xl">x</button>
+        <h1 class="text-2xl font-bold mb-2">
+            terima kasih telah berkunjung!
+        </h1>
+        <div class="text-gray-600 mb-4">
+            jika anda tertarik
+            pada web page ini anda dapat memesan jasa kami di facebook atau instagram.
+            <br>
+            <br>
+            <span class="text-indigo-600" >@hyuman.let</span>
+        </div>
+
+    </div>
+</div>
+<footer class="bg-indigo-600 text-white p-8">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+        <div>
+            <h1 class="text-4xl font-bold uppercase">HYUMAN.LET</h1>
+        </div>
+        <div class="text-center md:text-right">
+            <p>&copy; 2025 hyuman.let. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
+    <script>
+        function animasiScroll() {
+            const elemen = document.querySelectorAll('.scroll-animate');
+            elemen.forEach((el) => {
+                const posisiAtas = el.getBoundingClientRect().top;
+                const posisiBawah = el.getBoundingClientRect().bottom;
+                const tinggiLayar = window.innerHeight;
+
+                if (posisiAtas < tinggiLayar && posisiBawah > 0) {
+                    el.classList.add('show');
+                } else {
+                    el.classList.remove('show');
+                }
+            });
+        }
+        window.addEventListener('scroll', animasiScroll);
+        animasiScroll();
+        const modal = document.querySelector('.modal-fullscreen');
+        modal.style.display = 'flex';
+
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+        function openModal() {
+            modal.style.display = 'flex';
+        }
+        const elements = document.querySelectorAll('.ubah-text');
+        const characters = '0123456789';
+    
+        function getRandomChar() {
+            return characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        function changeText() {
+            elements.forEach(element => {
+                let currentText = element.textContent;
+                let newText = '';
+                for (let i = 0; i < currentText.length; i++) {
+                    newText += getRandomChar();
+                }
+                element.textContent = newText;
+            });
+            requestAnimationFrame(changeText);
+        }
+        requestAnimationFrame(changeText);
+    </script>
+    
+      
+</body>
+</html>
